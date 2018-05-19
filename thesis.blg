@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
+The style file: gbt7714-2005.bst
+A level-1 auxiliary file: body/abstract.aux
+A level-1 auxiliary file: body/chapter1.aux
+A level-1 auxiliary file: body/chapter2.aux
+A level-1 auxiliary file: body/chapter3.aux
+A level-1 auxiliary file: body/acknowledge.aux
+A level-1 auxiliary file: body/appendices.aux
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: bibfile.bib
+Warning--Require address: c1
+Warning--Require address: c2
+Warning--Require address: c3
+You've used 3 entries,
+            2975 wiz_defined-function locations,
+            706 strings with 6039 characters,
+and the built_in function-call counts, 1912 in all, are:
+= -- 155
+> -- 6
+< -- 15
++ -- 120
+- -- 12
+* -- 109
+:= -- 210
+add.period$ -- 0
+call.type$ -- 3
+change.case$ -- 6
+chr.to.int$ -- 0
+cite$ -- 6
+duplicate$ -- 199
+empty$ -- 104
+format.name$ -- 12
+if$ -- 497
+int.to.chr$ -- 0
+int.to.str$ -- 3
+missing$ -- 0
+newline$ -- 35
+num.names$ -- 3
+pop$ -- 15
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 43
+stack$ -- 0
+substring$ -- 162
+swap$ -- 106
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 3
+while$ -- 21
+width$ -- 4
+write$ -- 62
+(There were 3 warnings)

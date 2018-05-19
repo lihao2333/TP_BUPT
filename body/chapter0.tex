@@ -1,0 +1,41 @@
+\pagenumbering{arabic}
+
+\section{示例}
+
+\subsection{插入图片}
+如图\ref{fig:top_realmeaning}所示,这是一个滑稽\\
+\begin{figure}[thbp!]
+  \centering\includegraphics[width=0.2\linewidth]{figure/logo.jpg}
+\caption{ 滑稽的基类}
+\label{fig:top_realmeaning}
+\end{figure}
+
+\subsection{插入代码}
+\lstinputlisting[language=python]{code/code.py}
+
+\subsection{插入表格}
+如\ref{table}所示, 这是一个表格
+
+\begin{table}[H]
+ \centering 
+\begin{tabular}{|c|*{4}{c}|}
+\hline
+\diagbox{序号1}{序号2} & A & B & C& D \\
+\hline
+数字 & 1 & 2 & 3 & 4 \\
+\hline
+数字 & 2 & 4 & 6 & 8 \\
+\hline
+\end{tabular}
+\caption{表格}\label{table}  
+\end{table}
+
+\subsection{关于缩进}
+\indent \textbf{xxxx}\\
+\noindent xxxx
+
+\subsection{list}
+\begin{enumerate}
+	\item A
+	\item B
+\end{enumerate}
