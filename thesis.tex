@@ -1,4 +1,4 @@
-\documentclass[cs4size,a4paper]{ctexart}   
+\documentclass[cs6size,a4paper]{ctexart}   
 %==================== 数学符号公式 ============
 \usepackage{amsmath}                 % AMS LaTeX宏包
 \usepackage[style=1]{mdframed}
@@ -31,6 +31,15 @@
 
 %================== 表格 =========================
 \usepackage{makecell,rotating,multirow,diagbox}
+%==================  图片 =========================
+\newcommand{\addfig}[4][0.5]
+{
+  \begin{figure}[thbp!]
+  \centering\includegraphics[width=#1\linewidth]{figure/#2}
+  \caption{#4}
+  \label{#3}
+  \end{figure}
+}
 %================== 图形支持宏包 =========================
 \usepackage{subfigure}
 \usepackage{graphicx}                % 嵌入png图像
@@ -40,6 +49,11 @@
 \usepackage[font=small,labelfont=bf,labelsep=space]{caption}
 \captionsetup{figurewithin=section}
 %==================== 源码和流程图 =====================
+\newcommand{\addcode}[2][None]
+{
+	\lstinputlisting[language=#1]{code/#2}
+}
+
 \usepackage{listings}                % 粘贴源代码
 \usepackage{xcolor}
 \usepackage{color}
@@ -191,6 +205,7 @@
 %============== 论文正文   =================
 \pagestyle{fancy}
 \include{body/chapter0}      %
+\include{body/table}
 %\include{body/chapter1}      %
 %============= 参考文献 =====================
 \include{body/bib}

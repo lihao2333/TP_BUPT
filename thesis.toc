@@ -5,5 +5,5 @@
 \contentsline {subsection}{\numberline {1.2}插入代码}{1}{subsection.1.2}
 \contentsline {subsection}{\numberline {1.3}插入表格}{1}{subsection.1.3}
 \contentsline {subsection}{\numberline {1.4}关于缩进}{1}{subsection.1.4}
-\contentsline {subsection}{\numberline {1.5}list}{2}{subsection.1.5}
+\contentsline {subsection}{\numberline {1.5}list}{1}{subsection.1.5}
 \contentsline {section}{参考文献}{3}{Item.2}
