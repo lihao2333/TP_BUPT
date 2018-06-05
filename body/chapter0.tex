@@ -4,10 +4,15 @@
 
 \subsection{插入图片}
 如图\ref{fig:logo}所示,这是一个滑稽\\
-\addfig[0.3]{logo.jpg}{fig:logo}{滑稽的基类}
+%插入图片[图片宽度/页宽]{path}{label}{caption}
+\addfig[0.2]{logo.jpg}{fig:logo}{滑稽的基类}
 
 \subsection{插入代码}
 \addcode[python]{code.py}
+
+\subsection{插入数学公式}
+%https://zh.numberempire.com/latexequationeditor.php, 在这个网站上生成公式代码
+$$ \frac{\partial f}{\partial x} = 2\,\sqrt{a}\,x $$
 
 \subsection{插入表格}
 如\ref{table}所示, 这是一个表格
@@ -19,6 +24,14 @@
 
 \subsection{list}
 \begin{enumerate}
+	\item  啊啊啊啊啊
+	\item  嗯嗯嗯嗯恩???
+\end{enumerate}
+\begin{description}
+  \item[牛逼的人] linus, stallman 
+  \item[牛逼的工具] git, gnuplot
+\end{description}
+\begin{itemize}
 	\item A
 	\item B
-\end{enumerate}
+\end{itemize}

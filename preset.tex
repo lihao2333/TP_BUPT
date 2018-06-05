@@ -1,0 +1,168 @@
+%==================== 数学符号公式 ============
+\usepackage{amsmath}                 % AMS LaTeX宏包
+\usepackage[style=1]{mdframed}
+\usepackage{amsthm}
+\usepackage{pdfpages}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}                % 英文花体字 体
+\usepackage{bm}                      % 数学公式中的黑斜体
+\usepackage{manfnt}           % 一些图标，如 \dbend
+\usepackage{lettrine}                % 首字下沉，命令\lettrine
+\def\attention{\lettrine[lines=2,lraise=0,nindent=0em]{\large\textdbend\hspace{1mm}}{}}
+\usepackage{longtable}
+\usepackage[toc,page]{appendix}
+\usepackage{geometry}                % 页边距调整
+\geometry{top=3.0cm,bottom=2.7cm,left=2.5cm,right=2.5cm}
+%====================公式按章编号==========================
+\numberwithin{equation}{section}
+\numberwithin{table}{section}
+\numberwithin{figure}{section}
+%================= 基本格式预置 ===========================
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}  
+\fancyhead[C]{\zihao{5}  \kaishu 这是一份实验报告}
+\fancyfoot[C]{~\zihao{5} \thepage~}
+\renewcommand{\headrulewidth}{0.65pt} 
+\CTEXsetup[format={\centering\bfseries\zihao{-2}},name={第, 章}]{section}
+\CTEXsetup[nameformat={\bfseries\zihao{3}}]{subsection}
+\CTEXsetup[nameformat={\bfseries\zihao{4}}]{subsubsection}
+
+%================== 表格 =========================
+\usepackage{makecell,rotating,multirow,diagbox}
+%==================  图片 =========================
+\newcommand{\addfig}[4][0.5]
+{
+  \begin{figure}[thbp!]
+  \centering\includegraphics[width=#1\linewidth]{figure/#2}
+  \caption{#4}
+  \label{#3}
+  \end{figure}
+}
+%================== 图形支持宏包 =========================
+\usepackage{subfigure}
+\usepackage{graphicx}                % 嵌入png图像
+\usepackage{color,xcolor}            % 支持彩色文本、底色、文本框等
+\usepackage{hyperref}                % 交叉引用
+%\usepackage{caption}
+\usepackage[font=small,labelfont=bf,labelsep=space]{caption}
+\captionsetup{figurewithin=section}
+%==================== 源码和流程图 =====================
+\newcommand{\addcode}[2][None]
+{
+	\lstinputlisting[language=#1]{code/#2}
+}
+
+\usepackage{listings}                % 粘贴源代码
+\usepackage{xcolor}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\usepackage{xcolor}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{comment}{rgb}{0.56,0.64,0.68}
+\lstset{
+  frame=tb,
+  aboveskip=3mm,
+  belowskip=3mm,
+  xleftmargin=2em,
+  xrightmargin=2em,
+  showstringspaces=false,
+  keepspaces=true,
+ columns=flexible,
+  framerule=1pt,
+  rulecolor=\color{gray!35},
+  backgroundcolor=\color{gray!5},
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{comment},
+  stringstyle=\color{dkgreen},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=2,
+}
+% \lstset{
+% breaklines=true,
+%  %行号
+%    numbers=left,
+%     numberstyle= \tiny, 
+%    basicstyle=\tiny,
+%    %背景框
+%    framexleftmargin=8mm,
+%    frame=none,
+%     %背景色
+%    %backgroundcolor=\color[rgb]{1,1,0.76},
+%     backgroundcolor=\color[RGB]{245,245,244},
+%     %样式
+%   keywordstyle=\bf\color{blue},
+%   identifierstyle=\bf,
+%    numberstyle=\color[RGB]{0,192,192},
+%    commentstyle=\it\color[RGB]{0,96,96},
+%   stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},
+%   %显示空格
+%    showstringspaces=false
+% }
+
+
+%--------------------
+\hypersetup{hidelinks}
+\usepackage{booktabs}  
+\usepackage{shorttoc}
+\usepackage{tabu,tikz}
+\usepackage{float}
+
+\usepackage{multirow}
+
+
+
+\tabcolsep=1ex
+\tabulinesep=\tabcolsep
+\newlength\tikzboxwidth
+\newlength\tikzboxheight
+\newcommand\tikzbox[1]{%
+        \settowidth\tikzboxwidth{#1}%
+        \settoheight\tikzboxheight{#1}%
+        \begin{tikzpicture}
+        \path[use as bounding box]
+                (-0.5\tikzboxwidth,-0.5\tikzboxheight)rectangle
+                (0.5\tikzboxwidth,0.5\tikzboxheight);
+        \node[inner sep=\tabcolsep+0.5\arrayrulewidth,line width=0.5mm,draw=black]
+                at(0,0){#1};
+        \end{tikzpicture}%
+        }
+
+\makeatletter
+\def\hlinew#1{%
+  \noalign{\ifnum0=`}\fi\hrule \@height #1 \futurelet
+   \reserved@a\@xhline}
+   
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}%
+
+\usepackage{subfigure}
+
+\usepackage{CJK}
+\usepackage{ifthen}
+
+
+\usepackage{graphicx} 
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\newtheorem{Theorem}{定理}
+\newtheorem{Lemma}{引理} 
+%%使得公式随章节自动编号
+\makeatletter
+\@addtoreset{equation}{section}
+\makeatother
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+
+%-------------------------
+	
+\usepackage{pythonhighlight}
+\usepackage{tikz}                    
+\usepackage{tikz-3dplot}
+\usetikzlibrary{shapes,arrows,positioning}
