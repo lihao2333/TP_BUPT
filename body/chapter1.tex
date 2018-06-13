@@ -1,37 +1,87 @@
 \pagenumbering{arabic}
 
-\section{示例}
+\section{实验一——利用交换机简单组网}
+	\subsection{实验设计}
+		本实验希望仅通过二层交换来使三台计算机联网\\
+		拓扑结构和ip如图\ref{fig:one-topology}
+		三台主机都是同一个网段。 由于是独立网络， 所以我们没有用私有ip地址。
+		\addfig[0.5]{one-topology.png}{fig:one-topology}{拓扑结构}
+		此时交换机并没有设置任何vlan， 所以三个交换机该实验对交换机的端口没有要求.\\
+		预测结果，三台主机都能够互相ping通.
+	\subsection{实验结果}
+		我们在三台windows主机上按照按照图\ref{fig:one-setip3}所示来配置IP.\\
+		\addfig[0.5]{one-setip3.png}{fig:one-setip3}{设置主机三的ip}
+		如图\ref{fig:one-3ping1}所示， 主机3能够ping通主机1, 如图\ref{fig:one-3ping2}所示， 主机3能够ping通主机2\\
+		\addfig[0.5]{3ping1-good.png}{fig:one-3ping1}{主机3ping主机1}
+		\addfig[0.5]{3ping2-good.png}{fig:one-3ping2}{主机3ping主机2}
+	\subsection{实验结论}
+		\begin{enumerate}
+		  \item 独立网络不用私网地址也可以
+		  \item 只用交换机搭建的二层网络网关无意义
+          \item 交换机级联后， 可以视为同一个交换机， 主机能否ping同只取决于是否在同一个网段
 
-\subsection{插入图片}
-%如图\ref{fig:top_realmeaning}所示\\
-%\begin{figure}[thbp!]
-%\centering\includegraphics[width=0.9\linewidth]{figure/top_realmeaning.jpg}
-%\caption{ 模拟场景}
-%\label{fig:top_realmeaning}
-%\end{figure}
+		\end{enumerate}
+\section{实验二——广播风暴}
+	\subsection{实验设计}
+		本实验希望验证两个交换机中接入两根网线产生的后果.
+		拓扑结构如图\ref{fig:two-topology}\\
+		\addfig[0.5]{two-topology.png}{fig:two-topology}{拓扑结构}
+		预测结果， 接入两根线后会产生广播风暴， 导致无法ping通.\\
+		如果在软件层面实现减断环路后就能够ping通.
+		
+	\subsection{实验结果}
+		插入前换交换机黄等闪烁较慢(图\ref{fig:two-blink-single}), 两台主机能够相互ping通,
+		插入后交换机黄灯闪烁变快(图\ref{fig:two-blink-double}), 两台主机不能够ping通(图\ref{fig:two-3ping1-bad})\\
+		\addfig[0.5]{blink-single.jpg}{fig:two-blink-single}{只接一根线时的黄灯}
+		\addfig[0.5]{blink-double.jpg}{fig:two-blink-double}{接两根线时的黄灯}
+		\addfig[0.5]{3ping1-bad.png}{fig:two-3ping1-bad}{接两跟线时主机3无法ping通主机1}
+		通过命令\emph{stp en}的方法剪断环路后， 主机就能ping通, 且黄灯恢复正常
+		之后我们又尝试了在一台交换机上将一跟网线插到两个端口上， 结果一致
 
-\addfig{logo.jpg}
-\subsection{插入代码}
-\begin{lstlisting}[language=matlab]
-  a=a;
-  b=b;
-  c=xxx;
-\end{lstlisting}
-
-\subsection{插入表格}
-\begin{tabular}{cc}%一个c表示有一列，格式为居中显示(center)
-(1,1)&(1,2)\\%第一行第一列和第二列  中间用&连接
-(2,1)&(2,2)\\%第二行第一列和第二列  中间用&连接
-\end{tabular}
-
-\subsection{关于缩进}
-\indent \textbf{xxxx}\\
-\noindent xxxx
-
-\subsection{list}
-\begin{enumerate}
-	\item A
-	\item B
-	\item C
-\end{enumerate}
-
+	\subsection{实验结论}
+		\begin{enumerate}
+		  \item 连接两根线后, 由于ARP协议的缺陷， 交换机会不断的发出询问， 由于成环， 该询问被自激， 所以产生广播风暴.
+		  \item 从交换机的黄灯闪烁频率上能看出是否有广播风暴
+		  \item 通过软件的方法可以避免广播风暴
+		\end{enumerate}
+\section{实验三--vlan}
+	\subsection{实验设计}
+		本实验希望验证vlan的隔离效果
+		拓扑结构以及ip配置如图\ref{fig:three-topology}\\
+		\addfig[0.5]{three-topology.png}{fig:three-topology}{拓扑结构以及ip配置}
+	    预测结果，主机1和主机2能够相互ping通， 但是他们无法ping通主机3
+	\subsection{实验结果}
+		我们配置vlan如图\ref{fig:three-vlanconfig}
+		\addfig[0.5]{three-vlanconfig.png}{fig:three-vlanconfig}{配置vlan}
+		如图\ref{fig:three-1ping2-good}所示， 主机1能够ping通主机2。如图\ref{fig:three-1ping3-bad}所示， 主机1不能ping通主机3
+		\addfig[0.5]{1ping2-good.png}{fig:three-1ping2-good}{主机1能够ping通主机2}
+		\addfig[0.5]{1ping3-bad.png}{fig:three-1ping3-bad}{主机1不能够ping通主机3}
+	\subsection{实验结论}
+		\begin{enumerate}
+		  \item vlan能够实现隔离，就算同一个网段，如果不是同一个vlan，也不能ping通
+		\end{enumerate}
+\section{实验四——利用路由器实现跨网段访问}
+	\subsection{实验设计}
+		本实验希望用两个路由器和一个交换机实现跨网段访问.\\
+		拓扑结构以及ip配置如图\ref{fig:four-topology}\\
+		\addfig[0.5]{four-topology.png}{fig:four-topology}{拓扑结构以及ip配置}
+		其中交换机所涉及的端口都是同一个vlan之中.
+		由于路由器的串口线不稳定，　所以我们采用的是路由器的\emph{subip}的方法， 并且采用静态路由实现路由器A B的连通.\\
+		预测结果， 主机3够通过路由器A，B来ping通主机2.
+	\subsection{试验结果}
+	    我们按照图\ref{fig:four-setip3}的方式来配置ip
+		\addfig[0.5]{four-setip3.png}{fig:four-setip3}{主机3配置ip}
+		我们按照图\ref{fig:four-setrouteA}来配置路由器
+		配置结果如图\ref{fig:four-routeconfigA}和图\ref{fig:four-routeconfigB}所示.\\
+		\addfig[0.5]{four-setrouteA.png}{fig:four-setrouteA}{路由器A的配置方法}
+		\addfig[0.5]{four-routeconfigA.png}{fig:four-routeconfigA}{路由器A的配置结果}
+		\addfig[0.5]{four-routeconfigB.png}{fig:four-routeconfigB}{路由器B的配置结果}
+		两个路由器添加静态路由表的结果如图\ref{fig:four-routetableA} 和\ref{fig:four-routetableB}所示
+		\addfig[0.5]{four-routetableA.png}{fig:four-routetableA}{路由器A的静态路由}
+		\addfig[0.5]{four-routetableB.png}{fig:four-routetableB}{路由器B的静态路由}
+		主机3 tracert 主机2的结果如图\ref{fig:four-3tracert2}所示,可见主机3确实是通过路由器来跨网段连通到主机2
+		\addfig[0.5]{four-3tracert2.png}{fig:four-3tracert2}{主机3tracert主机2}
+	\subsection{实验结论}
+		\begin{enumerate}
+		  \item 路由器之间的连接除了串口还可以通过sub ip相连通
+		\end{enumerate}
