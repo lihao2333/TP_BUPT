@@ -1,0 +1,10 @@
+*/*.swp
+*/*.aux
+*/*.log
+*/*.pdf
+
+*.swp
+*.aux
+*.log
+*.pdf
+

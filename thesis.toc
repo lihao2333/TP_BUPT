@@ -5,3 +5,5 @@
 \contentsline {subsection}{\numberline {1.4}插入表格}{1}{subsection.1.4}
 \contentsline {subsection}{\numberline {1.5}关于缩进}{1}{subsection.1.5}
 \contentsline {subsection}{\numberline {1.6}list}{2}{subsection.1.6}
+\contentsline {section}{\numberline {A}第一附录}{3}{appendix.A}
+\contentsline {section}{\numberline {B}第二附录}{3}{appendix.B}
