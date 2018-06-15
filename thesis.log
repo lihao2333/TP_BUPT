@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2018.4.30)  13 JUN 2018 15:08
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2018.4.30)  13 JUN 2018 15:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2695,7 +2695,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 \openout2 = `body/appendices.aux'.
 
  (./body/appendices.tex (./expreience/吕雪冰.tex) (./expreience/张瀚林.tex)
-(./expreience/凤雨婷.tex) (./expreience/李昊.tex
+(./expreience/liyunzhen.tex) (./expreience/凤雨婷.tex) (./expreience/李昊.tex
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.64723pt.
@@ -2726,9 +2726,9 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 46225 strings out of 493005
- 913232 string characters out of 6134596
- 1011824 words of memory out of 5000000
+ 46228 strings out of 493005
+ 913291 string characters out of 6134596
+ 1012917 words of memory out of 5000000
  49406 multiletter control sequences out of 15000+600000
  10405 words of font info for 66 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191

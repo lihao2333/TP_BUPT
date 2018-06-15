@@ -19,6 +19,7 @@
 \contentsline {section}{\numberline {A}心得体会}{9}{appendix.A}
 \contentsline {subsection}{\numberline {A.1}吕雪冰}{9}{subsection.A.1}
 \contentsline {subsection}{\numberline {A.2}张瀚林}{9}{subsection.A.2}
-\contentsline {subsection}{\numberline {A.3}凤雨婷}{9}{subsection.A.3}
-\contentsline {subsection}{\numberline {A.4}李昊}{9}{subsection.A.4}
-\contentsline {subsection}{\numberline {A.5}王浩波}{10}{subsection.A.5}
+\contentsline {subsection}{\numberline {A.3}李云真}{9}{subsection.A.3}
+\contentsline {subsection}{\numberline {A.4}凤雨婷}{9}{subsection.A.4}
+\contentsline {subsection}{\numberline {A.5}李昊}{10}{subsection.A.5}
+\contentsline {subsection}{\numberline {A.6}王浩波}{10}{subsection.A.6}
