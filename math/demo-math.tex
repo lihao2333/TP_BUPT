@@ -1,0 +1,64 @@
+这是一个不带编号的行间公式\\
+$$ \frac{\partial f}{\partial x} = 2\,\sqrt{a}\,x $$
+如公式\ref{math:demo}所示，这是一个对齐后的公式
+\begin{equation}\label{math:demo}
+\begin{aligned}
+        \mathbb{E}\left ( H\right )=\sum _{i=0}^4H_i · p_i & =2 · \frac{1}{4}+1 · \frac{1}{4}+1 · \frac{1}{4}+0 · \frac{1}{4}\\
+												           & =\frac{1}{2}+\frac{1}{4}+\frac{1}{4}\\
+        												   & =1
+\end{aligned}
+\end{equation}
+对齐，每个都编号，空格
+\begin{align}
+   x^2 + y^2 +1&=  z^2 \\
+  x^3 + y^3 +\quad &<  z^3
+\end{align}
+大括号
+\begin{equation}
+\lambda_x = 
+\left\{
+ \begin{aligned}
+ 0,&x=1 \\ 
+ \infty,&x\neq 1
+\end{aligned}
+ \right.
+\end{equation}
+缩进,利用aligned的嵌套
+\begin{equation}
+  \begin{aligned}
+	while&(k<MAX):\\
+		& \begin{aligned}
+		  (i_0,j_0) &= \arg\min_{\forall(i,j)\in \Phi [X^{(k)})]} \lambda_i + w_{i,j}\\
+		  x &= y\\
+		\end{aligned} \\
+		& \begin{aligned}
+		  x&=\sum_2^2 \\
+			yx&=\sum_2^2 
+		\end{aligned}
+  \end{aligned}
+\end{equation}
+要注意公式中不能空行
+\begin{equation}
+\begin{aligned}
+  & \begin{aligned}
+  \lambda_x=
+\left \{ 
+  \begin{aligned}
+ 0,\quad &x=1 \\ 
+ \infty,\quad&x\neq 1
+  \end{aligned}
+\right. \\ 
+  \end{aligned}\\
+  & \begin{aligned}
+  & while(k<max):\\
+  & \quad \begin{aligned}
+   (i_0,j_0) &= \arg\min_{\forall(i,j)\in \Phi [X^{(k)}]} \lambda_i + w_{i,j}\\
+   X^{(k+1)} &= (j_0,\lambda_{j_0}+w_{i_0,j_0},i_0)\\
+  \end{aligned}
+  \end{aligned}\\
+  & \begin{aligned}
+  &if (i,j) \in \Phi [X^{(k)}]:\\
+  &\quad then:v_{i} \in X^{(k)} and v_{j} \notin X^{(k)}
+\end{aligned}
+\end{aligned}
+\end{equation}

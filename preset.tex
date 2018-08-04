@@ -12,24 +12,33 @@
 \usepackage{longtable}
 \usepackage[toc,page]{appendix}
 \usepackage{geometry}                % 页边距调整
-\geometry{top=3.0cm,bottom=2.7cm,left=2.5cm,right=2.5cm}
+\geometry{top=3.0cm,bottom=2.7cm,left=2.5cm,right=2.5cm} 
+
+\usepackage{fancyhdr}
+%====================清单==========================
+\usepackage{enumitem}
+\setlist[description]{leftmargin=\parindent,labelindent=\parindent}
 %====================公式按章编号==========================
 \numberwithin{equation}{section}
 \numberwithin{table}{section}
 \numberwithin{figure}{section}
 %================= 基本格式预置 ===========================
-\usepackage{fancyhdr}
+
 \pagestyle{fancy}
-\fancyhf{}  
-\fancyhead[C]{\zihao{5}  \kaishu 这是一份实验报告}
-\fancyfoot[C]{~\zihao{5} \thepage~}
+\fancyhf{}  %四个角添加的内容
+\fancyfoot[C]{~\zihao{5} \thepage~ }%页足内容,L:左,C:中,R:右
 \renewcommand{\headrulewidth}{0.65pt} 
-\CTEXsetup[format={\centering\bfseries\zihao{-2}},name={第, 章}]{section}
-\CTEXsetup[nameformat={\bfseries\zihao{3}}]{subsection}
-\CTEXsetup[nameformat={\bfseries\zihao{4}}]{subsubsection}
+\CTEXsetup[format={\centering\bfseries\zihao{3}},name={第, 章}]{section}
+\CTEXsetup[nameformat={\bfseries\zihao{4}},format={\bfseries\zihao{4}}]{subsection}
+\CTEXsetup[nameformat={\songti\zihao{-4}},format={\songti\zihao{-4}}]{subsubsection}
+%nameformat:编号;format:文字
 
 %================== 表格 =========================
 \usepackage{makecell,rotating,multirow,diagbox}
+\newcommand{\addtbl}[1]
+{
+	\input{table/#1}
+}
 %==================  图片 =========================
 \newcommand{\addfig}[4][0.5]
 {
@@ -86,29 +95,6 @@
   breakatwhitespace=true,
   tabsize=2,
 }
-% \lstset{
-% breaklines=true,
-%  %行号
-%    numbers=left,
-%     numberstyle= \tiny, 
-%    basicstyle=\tiny,
-%    %背景框
-%    framexleftmargin=8mm,
-%    frame=none,
-%     %背景色
-%    %backgroundcolor=\color[rgb]{1,1,0.76},
-%     backgroundcolor=\color[RGB]{245,245,244},
-%     %样式
-%   keywordstyle=\bf\color{blue},
-%   identifierstyle=\bf,
-%    numberstyle=\color[RGB]{0,192,192},
-%    commentstyle=\it\color[RGB]{0,96,96},
-%   stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},
-%   %显示空格
-%    showstringspaces=false
-% }
-
-
 %--------------------
 \hypersetup{hidelinks}
 \usepackage{booktabs}  
